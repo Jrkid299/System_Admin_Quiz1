@@ -22,3 +22,36 @@ echo "I am about to create a directory structure named ${DIRNAME}."
 
 #Asking the user if they want to proceed
 read -p "Do you want me to continue [Yes/no] " INPUT
+
+#Yes or no condition to check if they want to proceed to create the directory sturcture
+    if [[ "$INPUT" = Yes || "$INPUT" = yes || "$INPUT" = y ]]; then
+
+        #Creation of the directory structure
+        mkdir $DIRNAME
+        cd $DIRNAME
+        mkdir bin cmd internals migrations remote
+        touch Makefile
+        go mod init "$ID"
+        cd cmd
+        mkdir api
+        cd api
+        touch main.go 
+        echo "  
+            // File: cmd/api/main.go
+
+            package main
+
+            import 'fmt'
+
+            func main() {
+                fmt.Println('Hello world!)
+            } 
+       " >> main.go
+    else
+        echo "Abort"     
+        exit
+    fi
+
+    echo -e
+
+    echo -e "I have created a *main.go* file for you to test the directory structure.\nType *go run ./cmd/api* at the root directory of your project to test your project.\nThank you."
