@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+#Assigning the arguments into a variable
+DIRNAME=$1
+ID=$2
+
+#Exception to test if the inputs are empty
+if [[ "$DIRNAME" = "" ]]; then 
+    echo "You need to provide two arguments for this script to work. Please try again"
+    exit
+
+else 
+    #Displaying Arguemnts given
+    echo "Directiory name is: $1"
+    echo "Indentifier name is: $2" 
+fi
