@@ -15,3 +15,10 @@ else
     echo "Directiory name is: $1"
     echo "Indentifier name is: $2" 
 fi
+ 
+echo -e
+
+echo "I am about to create a directory structure named ${DIRNAME}."
+
+#Asking the user if they want to proceed
+read -p "Do you want me to continue [Yes/no] " INPUT
