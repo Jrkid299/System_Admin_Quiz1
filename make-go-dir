@@ -27,6 +27,8 @@ read -p "Do you want me to continue [Yes/no] " INPUT
     if [[ "$INPUT" = Yes || "$INPUT" = yes || "$INPUT" = y ]]; then
 
         #Creation of the directory structure
+        echo " Creating directory structure...."
+        echo -e
         mkdir $DIRNAME
         cd $DIRNAME
         mkdir bin cmd internals migrations remote
@@ -41,10 +43,10 @@ read -p "Do you want me to continue [Yes/no] " INPUT
 
             package main
 
-            import 'fmt'
+            import \"fmt\"
 
             func main() {
-                fmt.Println('Hello world!)
+                fmt.Println(\"Hello world!\")
             } 
        " >> main.go
     else
