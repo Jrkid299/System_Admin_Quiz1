@@ -4,6 +4,7 @@
 #Assigning the arguments into a variable
 DIRNAME=$1
 ID=$2
+APPEND="$1.$2"
 
 #Exception to test if the inputs are empty
 if [[ -z "$DIRNAME"  || -z "$ID"  ]]; then 
@@ -33,7 +34,7 @@ read -p "Do you want me to continue [Yes/no] " INPUT
         cd $DIRNAME
         mkdir bin cmd internals migrations remote
         touch Makefile
-        go mod init "$ID"
+        go mod init "$APPEND"
         cd cmd
         mkdir api
         cd api
